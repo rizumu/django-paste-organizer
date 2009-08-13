@@ -17,7 +17,7 @@ setup(
     keywords='writeboards,django'
     author='Thomas Schreiber',
     author_email='tom@insatsu.us',
-    url='http://github.com/rizumu/django-writeboards',
+    url='http://github.com/rizumu/django-writeboards/',
     license='MIT',
     packages=find_packages(),
     include_package_data=True,
