@@ -22,11 +22,9 @@ setup(
     keywords='writeboards,django'
     packages=find_packages(),
     include_package_data=True,
-    package_data = {
-        'friends': [
-            'templates/writeboards/*/*.html',
-            'templates/writeboards/*/*.txt',
-        ]
-    },
+    packages = [
+        'writeboards',
+    ],
+    package_dir={'writeboards': 'writeboards'},
     zip_safe=False,
 )
