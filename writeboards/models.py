@@ -15,7 +15,6 @@ class Writeboard(models.Model):
     create_date = models.DateTimeField(_("created"), default=datetime.now)
     writeboard_id = models.IntegerField(_('writeboard id'),)
     tags = TagField()
-    public = models.BooleanField(default=True)
     plaintext_password = models.CharField(_('plaintext password'), 
         max_length=100, blank =True, null =True, help_text="no encryption")
     active = models.BooleanField(default=True)
