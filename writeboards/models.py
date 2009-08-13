@@ -13,7 +13,7 @@ class Writeboard(models.Model):
     slug = models.SlugField(_('slug'), unique=True)
     creator = models.ForeignKey(User, related_name=_("creator"))
     create_date = models.DateTimeField(_("created"), default=datetime.now)
-    writeboard_id = models.IntegerField(_('writeboard id'),)
+    writeboard_id = models.CharField(_('writeboard id'), max_length=25)
     tags = TagField()
     plaintext_password = models.CharField(_('plaintext password'), 
         max_length=100, blank =True, null =True, help_text="no encryption")
