@@ -1,16 +1,17 @@
+from datetime import datetime
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from tagging.models import Tag
 from tagging.fields import TagField
 
-class Writeboard(models.model):
+class Writeboard(models.Model):
     """
     Plaintext password field could simply be filled in with a reminder of.
     """
     writeboard_name = models.CharField(_('writeboard name'), max_length=100)
     slug = models.SlugField(_('slug'), unique=True)
-    creator = models.ForeignKey(_('creator'), User, related_name=_("creator"))
+    creator = models.ForeignKey(User, related_name=_("creator"))
     create_date = models.DateTimeField(_("created"), default=datetime.now)
     writeboard_id = models.IntegerField(_('writeboard id'),)
     tags = TagField()
@@ -25,7 +26,7 @@ class Writeboard(models.model):
     class Meta(object):
         verbose_name = _('writeboard')
         verbose_name_plural = _('writeboards')
-        ordering=['modified']
+        ordering=['create_date']
 
     def create_a_writeboard():
         return ('http://writeboard.com/')
