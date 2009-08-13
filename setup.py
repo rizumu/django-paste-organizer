@@ -19,10 +19,8 @@ setup(
         'Programming Language :: Python',
         'Framework :: Django',
     ],
-    keywords='writeboards,django'
-    packages=[
-        'writeboards',
-    ],
-    package_dir={'writeboards': 'writeboards'},
+    keywords='writeboards,django',
+    packages=find_packages(),
+    include_package_data=True,
     zip_safe=False,
 )
