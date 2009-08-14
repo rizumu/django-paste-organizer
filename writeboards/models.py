@@ -10,7 +10,6 @@ class Writeboard(models.Model):
     Plaintext password field could simply be filled in with a reminder of.
     """
     writeboard_name = models.CharField(_('writeboard name'), max_length=100)
-    slug = models.SlugField(_('slug'), unique=True)
     creator = models.ForeignKey(User, related_name=_("creator"))
     create_date = models.DateTimeField(_("created"), default=datetime.now)
     writeboard_id = models.CharField(_('writeboard id'), max_length=25)
@@ -30,6 +29,5 @@ class Writeboard(models.Model):
     def create_a_writeboard():
         return ('http://writeboard.com/')
 
-    @models.permalink
-    def get_absolute_url(self):
-        return ('writeboard_detail', None, {'slug': self.slug})
+    def url(self):
+        return "http://123.writeboard.com/%s" % self.writeboard_id
