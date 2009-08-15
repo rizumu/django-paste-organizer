@@ -9,7 +9,7 @@ def read(fname):
 setup(
     name='django-paste-organizer',
     version=version,
-    description="Manage 3rd party hosted pastes in one place. Allows easier team collaboration on multiple pastes by condensing them in one place.",
+    description="Keep online pastes organized place for both you and your team",
     long_description=read('README'),
     author='Thomas Schreiber',
     author_email='tom@insatsu.us',
