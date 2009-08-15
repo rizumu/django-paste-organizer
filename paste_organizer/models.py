@@ -13,7 +13,7 @@ class Pastebin(models.Model):
     paste_url = models.URLField(blank=True, verify_exists=True)
 
     def __unicode__(self):
-        return pastebintype_name
+        return self.pastebin_name
 
     class Meta(object):
         verbose_name = _('pastebin')
@@ -21,7 +21,7 @@ class Pastebin(models.Model):
         ordering=['pastebin_name']
 
     def create_paste():
-        return create_paste_url
+        return self.create_paste_url
 
 class Paste(models.Model):
     """
@@ -31,14 +31,14 @@ class Paste(models.Model):
     pastebin_type = models.ForeignKey(Pastebin)
     creator = models.ForeignKey(User, related_name=_("creator"))
     create_date = models.DateTimeField(_("created"), default=datetime.now)
-    paste_id = models.CharField(_('writeboard id'), max_length=25)
+    paste_id = models.CharField(_('paste id'), max_length=25)
     tags = TagField()
     plaintext_password = models.CharField(_('plaintext password'), 
         max_length=100, blank =True, null =True, help_text="no encryption")
     active = models.BooleanField(default=True)
 
     def __unicode__(self):
-        return self.writeboard_name
+        return self.paste_name
 
     class Meta(object):
         verbose_name = _('paste')
