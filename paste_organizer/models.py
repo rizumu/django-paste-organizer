@@ -28,7 +28,7 @@ class Paste(models.Model):
     Plaintext password field could simply be filled in with a reminder of.
     """
     paste_name = models.CharField(_('paste name'), max_length=100)
-    pastebin_type = models.CharField(blank=True, max_length=100)
+    pastebin_type = models.ForeignKey(Pastebin)
     creator = models.ForeignKey(User, related_name=_("creator"))
     create_date = models.DateTimeField(_("created"), default=datetime.now)
     paste_id = models.CharField(_('writeboard id'), max_length=25)
