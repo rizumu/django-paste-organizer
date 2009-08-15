@@ -9,8 +9,6 @@ def paste_list(request, **kwargs):
         pastes = Paste.objects.exclude(active=False)
     else:
         pastes = Paste.objects.exclude(active=False).exclude(public=False)
-    import ipdb
-    ipdb.set_trace()
     context = {
         "pastes": pastes,
     }
