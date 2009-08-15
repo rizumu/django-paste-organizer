@@ -7,9 +7,9 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name='django-writeboards',
+    name='django-paste-organizer',
     version=version,
-    description="Manage 123.writeboard.com hosted writeboards in one place. Allows easier team collaboration on multiple writeboardsself.",
+    description="Manage 3rd party hosted pastes in one place. Allows easier team collaboration on multiple pastes by condensing them in one place.",
     long_description=read('README'),
     author='Thomas Schreiber',
     author_email='tom@insatsu.us',
@@ -23,7 +23,7 @@ setup(
         'Programming Language :: Python',
         'Framework :: Django',
     ],
-    keywords='writeboards,django',
+    keywords='django,writeboard,gist,dpaste,pastebins',
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
