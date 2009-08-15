@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-
-{% block content %}
-    <ul>Writeboards:
-    {% for writeboard in object_list %}
-        <li><a href="{{ writeboard.url }}">{{ writeboard.writeboard_name }}</a></li>
-    {% endfor %}
-    </ul>
-{% endblock %}

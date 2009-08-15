@@ -1,11 +1,11 @@
 from django.conf.urls.defaults import *
-from models import Writeboard
+from models import Paste
 
 writeboard_list_dict = {
-  'queryset': Writeboard.objects.all(),
+  'queryset': Paste.objects.all(),
 }
 
 urlpatterns = patterns('',
     (r'$','django.views.generic.list_detail.object_list',
-        writeboard_list_dict),
+        paste_list_dict),
 )
