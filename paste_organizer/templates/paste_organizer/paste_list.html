@@ -2,7 +2,7 @@
 
 {% block content %}
     <ul>Pastes:
-    {% for paste in object_list %}
+    {% for paste in pastes %}
         <li><a href="{{ paste.url }}">{{ paste.paste_name }}</a></li>
     {% endfor %}
     </ul>

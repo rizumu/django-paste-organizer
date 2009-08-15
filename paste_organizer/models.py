@@ -36,6 +36,7 @@ class Paste(models.Model):
     plaintext_password = models.CharField(_('plaintext password'), 
         max_length=100, blank =True, null =True, help_text="no encryption")
     active = models.BooleanField(default=True)
+    public = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.paste_name
