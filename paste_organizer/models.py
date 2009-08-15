@@ -4,9 +4,11 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from tagging.fields import TagField
 
-class PastebinType(models.Model):
-    """(PastebinType description)"""
-    pastebintype_name = models.CharField(blank=True, max_length=100)
+class Pastebin(models.Model):
+    """
+    Online service where your paste is hosted
+    """
+    pastebin_name = models.CharField(blank=True, max_length=100)
     create_paste_url = models.URLField(blank=True, verify_exists=True)
     paste_url = models.URLField(blank=True, verify_exists=True)
 
@@ -14,14 +16,14 @@ class PastebinType(models.Model):
         return pastebintype_name
 
     class Meta(object):
-        verbose_name = _('pastebin type')
-        verbose_name_plural = _('pastebin types')
-        ordering=['pastebintype_name']
+        verbose_name = _('pastebin')
+        verbose_name_plural = _('pastebins')
+        ordering=['pastebin_name']
 
     def create_paste():
         return create_paste_url
 
-class Pastebin(models.Model):
+class Paste(models.Model):
     """
     Plaintext password field could simply be filled in with a reminder of.
     """

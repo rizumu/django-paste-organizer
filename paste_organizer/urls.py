@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 from models import Paste
 
-writeboard_list_dict = {
+paste_list_dict = {
   'queryset': Paste.objects.all(),
 }
 
