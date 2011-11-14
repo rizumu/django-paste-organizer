@@ -2,7 +2,10 @@ from datetime import datetime
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from tagging.fields import TagField
+try:
+    from tagging.fields import TagField
+except:
+    TagField = None
 
 class Pastebin(models.Model):
     """
@@ -32,7 +35,8 @@ class Paste(models.Model):
     creator = models.ForeignKey(User, related_name=_("creator"))
     create_date = models.DateTimeField(_("created"), default=datetime.now)
     paste_id = models.CharField(_('paste id'), max_length=25)
-    tags = TagField()
+    if TagField:
+        tags = TagField()
     plaintext_password = models.CharField(_('plaintext password'), 
         max_length=100, blank =True, null =True, help_text="no encryption")
     active = models.BooleanField(default=True)
